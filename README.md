@@ -114,7 +114,6 @@ Use these ISBNs to test fetching book covers:
 
 | 📘 Book Title               | ISBN           |
 |----------------------------|----------------|
-| The Spanish Love Deception | 9781668002520  |
 | Atomic Habits              | 9780735211292  |
 | The Alchemist              | 9780061122415  |
 | Deep Work                  | 9781455586691  |
