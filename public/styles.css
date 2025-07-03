@@ -139,3 +139,55 @@ textarea {
     text-align: center;
   }
 }
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .book-card {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .book-card img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-book-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    gap: 10px;
+  }
+}
+
