@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Book Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .book-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 15px;
+      max-width: 400px;
+    }
+    img {
+      width: 100px;
+      height: auto;
+    }
+    .actions {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <main>
+       <div class="header">
+    <h1>📚 My Book Tracker</h1>
+    <a class="add-book-btn" href="/add">➕ Add a New Book</a>
+  </div>
+
+  <% if (books.length === 0) { %>
+    <p>No books added yet.</p>
+  <% } else { %>
+    <% books.forEach(book => { %>
+      <div class="book-card">
+        <% if (book.cover_url) { %>
+          <img src="<%= book.cover_url %>" alt="Book Cover">
+        <% } else { %>
+          <p>No Cover</p>
+        <% } %>
+
+        <h2><%= book.title %></h2>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Rating:</strong> <%= book.rating || 'N/A' %>/5</p>
+        <p><strong>Date Read:</strong> <%= book.date_read ? book.date_read.toISOString().slice(0,10) : 'N/A' %></p>
+        <p><strong>Notes:</strong> <%= book.notes || 'None' %></p>
+
+        <div class="actions">
+          <a href="/edit/<%= book.id %>">✏️ Edit</a>
+
+          <form action="/delete/<%= book.id %>" method="POST" style="display:inline;">
+            <button type="submit">🗑️ Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  <% } %>
+    </main>
+
+</body>
+</html>
